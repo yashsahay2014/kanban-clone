@@ -1,0 +1,93 @@
+.list {
+  pointer-events: all;
+  min-width: 280px;
+  max-width: 280px;
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+  overflow: hidden;
+  background: $color-secondary;
+  z-index: 10;
+
+  &:hover {
+    .list__header__close {
+      opacity: 1;
+    }
+  }
+
+  &__dragging-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+    display: none;
+    background: lighten($color-secondary, 2%);
+    border-radius: 3px;
+    border: 2px solid #038387;
+    z-index: 1000;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 10px 36px 8px 8px;
+
+    input {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    &__close {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      right: 12px;
+      padding: 5px;
+      color: $color-secondary-dark;
+      transition: ease 0.2s;
+      &:hover {
+        color: darken($color-secondary-dark, 20%);
+      }
+    }
+  }
+
+  &__content {
+    padding: 0 4px;
+    margin: 0 4px;
+
+    &__button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      text-align: left;
+      color: darken($color-secondary-dark, 10%);
+      padding: 10px;
+      width: 100%;
+      background: $color-secondary;
+      &:hover {
+        color: $color-primary;
+        background: lighten($color-secondary, 2%);
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__composer {
+      margin-bottom: 8px;
+      padding: 0px;
+
+      &__input {
+        @extend %card;
+        padding: 0px;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

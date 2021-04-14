@@ -1,0 +1,49 @@
+.composer-box {
+  pointer-events: all;
+  background: $color-secondary;
+  border-radius: 4px;
+  width: 100%;
+  padding: 6px;
+  opacity: 0.5;
+  overflow: hidden;
+  max-height: 38px;
+  transition: ease 0.2s;
+
+  &--transparent {
+    background: none;
+  }
+
+  &__input {
+    margin-bottom: 6px;
+    position: relative;
+    &__count {
+      text-align: right;
+      opacity: 0.3;
+      position: absolute;
+      bottom: 3px;
+      right: 5px;
+      color: $color-primary;
+      font-style: italic;
+      z-index: 10;
+
+      &--error {
+        color: $color-error;
+      }
+    }
+  }
+
+  &__ops {
+    display: flex;
+    align-items: center;
+
+    &__close {
+      color: $color-secondary-dark;
+      margin-left: 2px;
+      cursor: pointer;
+      padding: 6px;
+      &:hover {
+        color: darken($color-secondary-dark, 10%);
+      }
+    }
+  }
+}
